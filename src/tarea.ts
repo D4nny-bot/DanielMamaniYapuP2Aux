@@ -3,11 +3,24 @@ console.log("introduccion a typescrip");
 let namee: string = "Daniel";
 //namee = 4;
 
-function greet(name: string, age: number){
-    let saludo = console.log(`hello ${name}, your age is ${age}`);
-    return saludo;
+function greet(sal: any){
+
+    console.log(sal);
+            
 }
-greet("Daniel", 99);
+    
+// - Cree una funcion donde el tipo de retorno never sea útil
+function errorEception(msge: string): never{
+    throw new Error(msge);
+}
+// modificar
+function saludo(nom: string, eda: number){
+    let saludo = console.log(`hello ${nom}, your age is ${eda}`);
+    return greet(saludo);
+}
+saludo("Daniel", 101);
+
+
     
 
 
