@@ -3,8 +3,8 @@ console.log("introduccion a typescrip");
 //introduccion a typescrip
 let namee = "Daniel";
 //namee = 4;
-function greet(sal) {
-    console.log(sal);
+function greet(sal, anio) {
+    console.log(sal, anio);
 }
 // - Cree una funcion donde el tipo de retorno never sea útil
 function errorEception(msge) {
@@ -12,7 +12,7 @@ function errorEception(msge) {
 }
 // modificar
 function saludo(nom, eda) {
-    let saludo = console.log(`hello ${nom}, your age is ${eda}`);
-    return greet(saludo);
+    let saludo = console.log(`hello ${nom}, your age is ${eda} y nació el `);
+    return saludo;
 }
-saludo("Daniel", 101);
+greet(saludo("Daniel", 101), 1900);

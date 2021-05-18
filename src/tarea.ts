@@ -3,9 +3,9 @@ console.log("introduccion a typescrip");
 let namee: string = "Daniel";
 //namee = 4;
 
-function greet(sal: any){
+function greet(sal: any, anio: number){
 
-    console.log(sal);
+    console.log(sal, anio);
             
 }
     
@@ -15,10 +15,10 @@ function errorEception(msge: string): never{
 }
 // modificar
 function saludo(nom: string, eda: number){
-    let saludo = console.log(`hello ${nom}, your age is ${eda}`);
-    return greet(saludo);
+    let saludo = console.log(`hello ${nom}, your age is ${eda} y nació el anio`);
+    return saludo;
 }
-saludo("Daniel", 101);
+greet(saludo("Daniel", 101), 1900);
 
 
     
