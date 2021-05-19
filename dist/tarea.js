@@ -40,5 +40,29 @@ dep1.createWorkeer("sammy");
 dep1.createWorkeer("david");
 dep1.createWorkeer("rodri");
 dep1.showEmployeesInfo();
-class sddk extends Departament {
+class CEODepartament extends Departament {
+    constructor(roladmi, id, work) {
+        super(id, work);
+        this.admins = ["AUTHOR", "ADMIN"].concat(roladmi);
+    }
 }
+var CEO1 = new CEODepartament(["DEVELOPER", "SECURITY", "SW"], "2", ["da"]);
+console.log(CEO1.admins);
+class ReportsDepartament extends Departament {
+    constructor(repo, id, work) {
+        super(id, work);
+        var len;
+        this.reports = ["task 004 failed"].concat(repo);
+    }
+    addReport(repo) {
+        let rest = this.reports.concat(repo);
+        console.log(rest);
+    }
+    greet(name) {
+        console.log(`Hello ${name} there are ${this.reports.length} reports`);
+    }
+}
+var Repo1 = new ReportsDepartament([], "3", ["luis"]);
+Repo1.addReport(["rep1", "rep2", "rep3"]);
+//Repo1.rep = ["rep4"];
+Repo1.greet("nombre");

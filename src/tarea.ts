@@ -23,7 +23,7 @@ greet(`${saludo("Daniel", 18)}`, 1900);
 console.log("Clases e Interfaces");
 class Departament{
     
-    owner: string;
+    private owner: string;
     id: string;
     workers: Array<string>;
     constructor(id: string, work: Array<string>){
@@ -50,9 +50,42 @@ dep1.createWorkeer("rodri");
 dep1.showEmployeesInfo();
 
 
-class sddk extends Departament{
+class CEODepartament extends Departament{
+
+    admins: Array<string>;
+    constructor(roladmi: Array<string>, id: string, work: Array<string>){
+        super(id, work);
+        this.admins = ["AUTHOR", "ADMIN"].concat(roladmi);
+
+    }
+}
+var CEO1: CEODepartament = new CEODepartament(["DEVELOPER", "SECURITY", "SW"], "2", ["da"]);
+console.log(CEO1.admins);
+
+class ReportsDepartament extends Departament{
+    private reports: Array<string>;
+    constructor(repo: Array<string>, id: string, work: Array<string>){
+        super(id, work);
+        var len: Array<string>;
+        this.reports = ["task 004 failed"].concat(repo);
+               
+    }
+    addReport(repo: Array<string>){
+        let rest: Array<string> = this.reports.concat(repo);
+        console.log(rest);
+    }
+    greet(name: string){
+        console.log(`Hello ${name} there are ${this.reports.length} reports`);
+    }
 
 }
+var Repo1: ReportsDepartament = new ReportsDepartament([], "3", ["luis"]);
+Repo1.addReport(["rep1", "rep2", "rep3"]);
+//Repo1.rep = ["rep4"];
+Repo1.greet("albert");
+
+
+
 interface lsls{
 
 }
