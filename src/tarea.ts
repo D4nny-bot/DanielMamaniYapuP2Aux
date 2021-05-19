@@ -85,9 +85,29 @@ Repo1.addReport(["rep1", "rep2", "rep3"]);
 Repo1.greet("albert");
 
 
+class Person implements IPerson{
+    name: string;
+    age: number;
+    constructor(){
+        this.name = "Daniel Mamani yapu";
+        this.age = 35;
+    }
+    greet(){
+        console.log(`hola ${name}`);
+    }
+}
 
-interface lsls{
+interface IPerson extends IData{
+    
+}
+interface IData{
+    name: string;
+    lastname?: string;
+    age: number;
 
+}
+interface IGreeting extends IData{
+    greet(): string;
 }
 
 
